@@ -1,0 +1,70 @@
+
+1. Customers (QL Khách Hàng)
+- cus_id (PK) – INT
+- cus_name – VARCHAR(100)
+- cus_email – VARCHAR(100), UNIQUE
+- cus_phone – VARCHAR(20)
+- cus_address – TEXT
+
+2. Restaurants (QL Nhà Hàng)
+- res_id (PK) – INT
+- res_name – VARCHAR(100)
+- res_address – TEXT
+- res_phone – VARCHAR(20)
+
+owner_id (FK → Users.user_id)
+
+created_at – DATETIME
+
+3. MenuItems (QL Menu)
+- item_id (PK) – INT, AUTO_INCREMENT
+- res_id (FK → Restaurants.res_id)
+- item_name – VARCHAR(100)
+- item_description – TEXT
+- item_price – DECIMAL(10,2)
+- is_available – BOOLEAN
+
+4. Orders (QL Đặt Hàng)
+- order_id (PK) – INT, AUTO_INCREMENT
+- cus_id (FK → Users.user_id)
+- res_id (FK → Restaurants.restaurant_id)
+- total_price – DECIMAL(10,2)
+- order_status – ENUM('pending','confirmed','preparing','delivering','completed','cancelled')
+
+created_at – DATETIME
+
+5. OrderItems (QL Đơn Hàng)
+
+- orderitem_id (PK) – INT, AUTO_INCREMENT
+- order_id (FK → Orders.order_id)
+- item_id (FK → MenuItems.item_id)
+- orderitem_quantity – INT
+- price – DECIMAL(10,2)
+
+6. Delivery (QL Giao Hàng)
+
+- deli_id (PK) – INT, AUTO_INCREMENT
+- order_id (FK → Orders.order_id)
+- driver_id (FK → Users.user_id)
+- deli_status – ENUM('assigned','picked_up','delivering','delivered')
+
+estimated_time – DATETIME
+delivered_at – DATETIME
+
+7. Payments (QL Thanh Toán)
+
+- pay_id (PK) – INT, AUTO_INCREMENT
+- order_id (FK → Orders.order_id)
+- pay_amount – DECIMAL(10,2)
+- pay_method – ENUM('cash','vnpay','momo')
+- pay_status – ENUM('pending','paid','failed')
+- pay_paidtime – DATETIME
+
+
+Relationship Summary (Môi quan hệ giữa các CSDL
+
+Customers – Orders: 1 khách hàng có thể đặt nhiều đơn hàng 
+Restaurants – MenuItems: 1 nhà hàng có thể có nhiều món ăn
+Orders – OrderItems: 1 đơn hàng có thể có nhiều món
+Orders – Delivery: 1 đơn hàng chỉ có 1 giao hnagf
+Orders – Payments: 1 đơn hàng chỉ có 1 thanh toán
