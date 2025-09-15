@@ -6,6 +6,7 @@
 - cus_phone – VARCHAR(20)                        : sdt khách hàng
 - cus_address – TEXT                             : địa chỉ khách hàng
 
+bỏ phần 2
 2. Restaurants                                   (QL Nhà Hàng)
 - res_id (PK) – INT                              : mã nhà hàng
 - res_name – VARCHAR(100)                        : tên nhà hàng
