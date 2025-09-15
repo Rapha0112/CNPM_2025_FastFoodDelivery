@@ -1,67 +1,56 @@
 
-1. Customers (QL Khách Hàng)
-- cus_id (PK) – INT
-- cus_name – VARCHAR(100)
-- cus_email – VARCHAR(100), UNIQUE
-- cus_phone – VARCHAR(20)
-- cus_address – TEXT
+1. Customers                                     (QL Khách Hàng)
+- cus_id (PK) – INT                              : mã khách hàng
+- cus_name – VARCHAR(100)                        : tên khách hàng
+- cus_email – VARCHAR(100), UNIQUE               : email khách hàng
+- cus_phone – VARCHAR(20)                        : sdt khách hàng
+- cus_address – TEXT                             : địa chỉ khách hàng
 
-2. Restaurants (QL Nhà Hàng)
-- res_id (PK) – INT
-- res_name – VARCHAR(100)
-- res_address – TEXT
-- res_phone – VARCHAR(20)
+2. Restaurants                                   (QL Nhà Hàng)
+- res_id (PK) – INT                              : mã nhà hàng
+- res_name – VARCHAR(100)                        : tên nhà hàng
+- res_address – TEXT                             : địa chỉ nhà hàng
+- res_phone – VARCHAR(20)                        : sdt nhà hàng
 
-owner_id (FK → Users.user_id)
+3. MenuItems                                     (QL Món Ăn)
+- item_id (PK) – INT, AUTO_INCREMENT             : mã món ăn
+- res_id (FK → Restaurants.res_id)               : mã nhà hàng
+- item_name – VARCHAR(100)                       : tên món ăn
+- item_description – TEXT                        : mô tả món ăn
+- item_price – DECIMAL(10,2)                     : giá món ăn     
+- is_available – BOOLEAN                         : trạng thái món ăn (còn/hết - đại loại vậy)
 
-created_at – DATETIME
+4. Orders                                                                                        (QL Đơn Hàng)
+- order_id (PK) – INT, AUTO_INCREMENT                                                            : mã đơn hàng
+- cus_id (FK → Users.user_id)                                                                    : mã khách hàng
+- res_id (FK → Restaurants.restaurant_id)                                                        : mã nhà hàng
+- total_price – DECIMAL(10,2)                                                                    : tổng giá trị đơn hàng        
+- order_status – ENUM('pending','confirmed','preparing','delivering','completed','cancelled')    : trạng thái đơn hàng (chưa xử lý / xác nhận / chuẩn bị / đang giao / đã giao / hủy đơn)
+- order_createdtime – DATETIME                                                                   : thời gian tạo đơn hàng
 
-3. MenuItems (QL Menu)
-- item_id (PK) – INT, AUTO_INCREMENT
-- res_id (FK → Restaurants.res_id)
-- item_name – VARCHAR(100)
-- item_description – TEXT
-- item_price – DECIMAL(10,2)
-- is_available – BOOLEAN
+5. OrderItems                                                                                    (QL Thông Tin Đơn Hàng)
+- orderitem_id (PK) – INT, AUTO_INCREMENT                                                        : mã tt đơn hàng
+- order_id (FK → Orders.order_id)                                                                : mã đơn hàng
+- item_id (FK → MenuItems.item_id)                                                               : mã món ăn
+- orderitem_quantity – INT                                                                       : số lượng 
+- orderitem_price – DECIMAL(10,2)                                                                : giá cả  
 
-4. Orders (QL Đặt Hàng)
-- order_id (PK) – INT, AUTO_INCREMENT
-- cus_id (FK → Users.user_id)
-- res_id (FK → Restaurants.restaurant_id)
-- total_price – DECIMAL(10,2)
-- order_status – ENUM('pending','confirmed','preparing','delivering','completed','cancelled')
+6. Delivery                                                                                      (QL Giao Hàng)
+- deli_id (PK) – INT, AUTO_INCREMENT                                                             : mã giao hàng
+- order_id (FK → Orders.order_id)                                                                : mã đơn hàng
+- deli_status – ENUM('assigned','delivering','delivered')                                        : trạng thái giao hàng (đợi giao hàng / đang giao hàng / đã giao)
+- deli_deliveredtime – DATETIME                                                                  : thời gian giao hàng
 
-created_at – DATETIME
-
-5. OrderItems (QL Đơn Hàng)
-
-- orderitem_id (PK) – INT, AUTO_INCREMENT
-- order_id (FK → Orders.order_id)
-- item_id (FK → MenuItems.item_id)
-- orderitem_quantity – INT
-- price – DECIMAL(10,2)
-
-6. Delivery (QL Giao Hàng)
-
-- deli_id (PK) – INT, AUTO_INCREMENT
-- order_id (FK → Orders.order_id)
-- driver_id (FK → Users.user_id)
-- deli_status – ENUM('assigned','picked_up','delivering','delivered')
-
-estimated_time – DATETIME
-delivered_at – DATETIME
-
-7. Payments (QL Thanh Toán)
-
-- pay_id (PK) – INT, AUTO_INCREMENT
-- order_id (FK → Orders.order_id)
-- pay_amount – DECIMAL(10,2)
-- pay_method – ENUM('cash','vnpay','momo')
-- pay_status – ENUM('pending','paid','failed')
-- pay_paidtime – DATETIME
+7. Payments                                                                                      (QL Thanh Toán)
+- pay_id (PK) – INT, AUTO_INCREMENT                                                              : mã thanh toán
+- order_id (FK → Orders.order_id)                                                                : mã đơn hàng
+- pay_amount – DECIMAL(10,2)                                                                     : tổng thanh toán
+- pay_method – ENUM('cash','vnpay','momo')                                                       : hình thức thanh toán (tiền mặt / ngân hàng / ví momo)
+- pay_status – ENUM('pending','paid')                                                            : trạng thái thanh toán (chưa thanh toán / đã thanh toán)
+- pay_paidtime – DATETIME                                                                        : thời gian thanh toán
 
 
-Relationship Summary (Môi quan hệ giữa các CSDL
+Relationship Summary (Môi quan hệ giữa các CSDL)
 
 Customers – Orders: 1 khách hàng có thể đặt nhiều đơn hàng 
 Restaurants – MenuItems: 1 nhà hàng có thể có nhiều món ăn
