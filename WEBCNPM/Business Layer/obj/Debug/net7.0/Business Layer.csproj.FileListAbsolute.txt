@@ -1,0 +1,15 @@
+C:\WEBCNPM\Business Layer\bin\Debug\net7.0\Business Layer.deps.json
+C:\WEBCNPM\Business Layer\bin\Debug\net7.0\Business Layer.dll
+C:\WEBCNPM\Business Layer\bin\Debug\net7.0\Business Layer.pdb
+C:\WEBCNPM\Business Layer\bin\Debug\net7.0\Data Layer.dll
+C:\WEBCNPM\Business Layer\bin\Debug\net7.0\Data Layer.pdb
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.csproj.AssemblyReference.cache
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.AssemblyInfoInputs.cache
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.AssemblyInfo.cs
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.csproj.CoreCompileInputs.cache
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.csproj.CopyComplete
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.dll
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\refint\Business Layer.dll
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\Business Layer.pdb
+C:\WEBCNPM\Business Layer\obj\Debug\net7.0\ref\Business Layer.dll
