@@ -1,0 +1,14 @@
+C:\WEBCNPM\Data Layer\bin\Debug\net7.0\Data Layer.deps.json
+C:\WEBCNPM\Data Layer\bin\Debug\net7.0\Data Layer.runtimeconfig.json
+C:\WEBCNPM\Data Layer\bin\Debug\net7.0\Data Layer.dll
+C:\WEBCNPM\Data Layer\bin\Debug\net7.0\Data Layer.pdb
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.csproj.AssemblyReference.cache
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.AssemblyInfoInputs.cache
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.AssemblyInfo.cs
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.csproj.CoreCompileInputs.cache
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.dll
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\refint\Data Layer.dll
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.pdb
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\Data Layer.genruntimeconfig.cache
+C:\WEBCNPM\Data Layer\obj\Debug\net7.0\ref\Data Layer.dll
