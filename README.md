@@ -29,11 +29,11 @@ This README document outlines the steps necessary to install and run the Fast Fo
 2. Follow the documented steps to create food items and categories, and register as a customer:
 
    1. Create several categories (contains food items), click Execute if the response body code 200 means creation was successful.
-   ![Response Code 200](images/response_code_200.jpg)
+
    2. Display data in dbo.Category to get CategoryId which has been automatically generated, so we can continue creating food items.
-   ![dbo.Category Data](images/dboCategoryData.jpg)
+
    3. Create a food item within a category as shown in the picture; if going well, the response body code 200.
-   ![Response Code 200 Food Item](images/response_code_200_foodItem.jpg)
+
 
 ### Sample Data Insertion
 1. Create several categories and execute the creation. Check the response body for a code 200 to confirm successful creation.
@@ -52,18 +52,12 @@ This README document outlines the steps necessary to install and run the Fast Fo
 ### Application User Interface
 Here are some views of the application's user interface:
 - **Admin Dashboard:**
-  ![Admin Dashboard](images/admin_dashboard.jpg)
-  ![Admin Food Item Management](images/admin_dashboard_foodItemManagement.jpg)
-  ![Admin Account Management](images/accounts_management.jpg)
-  ![Admin Account Management - Shipper Account Management](images/admin_shipper_account_management.jpg)
-  ![Admin Account Management - Add New Shipper](images/admin_add_new_shipper.png)
-  ![Admin Report View](images/admin_dashboard_report.jpg)
+
 
 - **Customer Payment UI:**
-  ![Customer Payment UI](images/customer_payment_UI.jpg)
 
 - **Homepage View:**
-  ![Homepage View](images/homepage.jpg)
+
 
 ### Order Processing Flows
 - **Case 1:** When an order's status is Paid and the DeliveryStatus is Processing, the admin can assign a shipper. Once assigned and confirmed by the shipper, the DeliveryStatus changes to Delivered.
